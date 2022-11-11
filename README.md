@@ -8,7 +8,7 @@ Best fitted SAR models (Kissling & Carl, 2008) predicting Sørensen-based multi-
 ###  Code
 #### R version 4.0.2 (2020-06-22)
 #### Required packages
-
+##### MASS 7.3-51.6
 
 
 ## Citation
