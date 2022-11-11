@@ -7,12 +7,13 @@ Best fitted SAR models (Kissling & Carl, 2008) predicting Sørensen-based multi-
 
 ###  Code
 #### Software
-R version 4.0.2 (2020-06-22)
+1. R version 4.0.2 (2020-06-22)
+
 #### Required packages
-MASS version 7.3-51.6
-dirmult version 0.1.3-5
-MCMCpack version 1.6-3
-coda version 0.19-3
+1. MASS version 7.3-51.6
+2. dirmult version 0.1.3-5
+3. MCMCpack version 1.6-3
+4. coda version 0.19-3
 
 
 
