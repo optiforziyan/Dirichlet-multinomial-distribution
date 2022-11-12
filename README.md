@@ -15,6 +15,8 @@ Best fitted SAR models (Kissling & Carl, 2008) predicting Sørensen-based multi-
 4. coda version 0.19-3
 5. ggplot2 version 3.36
 6. spatstat version 1.64-1
+7. colorspace version 1.4-1
+8. ggpmisc version 0.3.5
 
 ## Citation
 
