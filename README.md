@@ -1,16 +1,16 @@
 # Inferring single- and multi-species distributional aggregation using quadrat sampling
 
-## Instruction
+## Simulation
 
-###  Folders
+###  **Folders**
 #### functions
 1. Dirichlet-Multinomial distribution-S1.R
-1.1 rdirichlet   - random variate generation
-1.2 rdirichlet1  - random variate generation (avoid NAs)
-1.3 dDir         - probability density (not mass!) function of Dirichlet distribution
-1.4 dMDir        - probability mass (or density) function of the multinomial-Dirichlet distribution
-1.5 dNBD         - probability mass function for independent negative binomial model 
-1.6 dNMD         - probability mass function for negative multinomial model
+* rdirichlet   - random variate generation
+* rdirichlet1  - random variate generation (avoid NAs)
+* dDir         - probability density (not mass!) function of Dirichlet distribution
+* dMDir        - probability mass (or density) function of the multinomial-Dirichlet distribution
+* dNBD         - probability mass function for independent negative binomial model 
+* dNMD         - probability mass function for negative multinomial model
 1.7 rMDir        - simulation of multinomial-Dirichlet distribution
 1.8 rMDir1       - simulation of multinomial-Dirichlet distribution by avoiding NAs
 1.9 rand         - random matrices generation
