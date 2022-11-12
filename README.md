@@ -1,9 +1,31 @@
 # Inferring single- and multi-species distributional aggregation using quadrat sampling
 
-## Data and Code Availability
+## Instruction
 
-###  Data
-Best fitted SAR models (Kissling & Carl, 2008) predicting Sørensen-based multi-site dissimilarity (βsor) and its underlying true turnover (βsim) and nestedness (βsne) components for Chinese Lauraceae. R codes and data used for SAR analysis are given here to ensure reproducibility.
+###  Folders
+#### functions
+1. Dirichlet-Multinomial distribution-S1.R
+1.1 rdirichlet   - random variate generation
+1.2 rdirichlet1  - random variate generation (avoid NAs)
+1.3 dDir         - probability density (not mass!) function of Dirichlet distribution
+1.4 dMDir        - probability mass (or density) function of the multinomial-Dirichlet distribution
+1.5 dNBD         - probability mass function for independent negative binomial model 
+1.6 dNMD         - probability mass function for negative multinomial model
+1.7 rMDir        - simulation of multinomial-Dirichlet distribution
+1.8 rMDir1       - simulation of multinomial-Dirichlet distribution by avoiding NAs
+1.9 rand         - random matrices generation
+1.10 likelihood  - calculation of the negative log-likelihood function for the Dirichlet-Multinomial model
+1.11 likelihood0 - calculation of the negative log-likelihood function for the null model: multinomial model
+1.12 fit         - fitting of the SDM model
+1.13 fitNBD      - fitting of the independent NBD model
+1.14 fitNMD      - fitting of the NMD model
+1.15 fitMD       - fitting of the ordinary multinomial model
+2. Spatial distribution Index.R
+(1) CECI()       - Clark and Evans Competition Index
+(2) DC()         - Deviation Coefficient or Diffusion Coefficient 
+(3) species.distribution() - Simulation of species distribution using Poisson cluster process
+(4) r2.test      - calculate r2, RMSE, NRMSD based on actual values and predicted values
+
 
 ###  Code Availability
 #### Software
