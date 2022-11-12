@@ -2,8 +2,8 @@
 
 ## Simulation
 
-###  **Folders**
-#### functions
+###  **Folders
+#### *functions
 1. Dirichlet-Multinomial distribution-S1.R
 * rdirichlet()   - random variate generation
 * rdirichlet1()  - random variate generation (avoid NAs)
