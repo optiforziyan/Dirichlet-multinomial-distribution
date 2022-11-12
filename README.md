@@ -3,7 +3,7 @@
 ## Simulation
 
 ###  **Folders**
-#### *functions*
+#### *functions* - Custom R Script
 1. Dirichlet-Multinomial distribution-S1.R
 * rdirichlet()   - random variate generation
 * rdirichlet1()  - random variate generation (avoid NAs)
