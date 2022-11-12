@@ -29,7 +29,9 @@
 * bci.spptable.rdata           - for more information, please visit: https://datadryad.org/stash/dataset/doi:10.15146/5xcp-0d46
 * bci.treen.rdata (n = 1 to 8) - for more information, please visit: https://datadryad.org/stash/dataset/doi:10.15146/5xcp-0d46
 #### *output*
-
+* randomized_single_species_distribution.rds - the results of numeric simulation – Randomized spatial-point distribution data
+* randomized_10_species_distribution.rds     - the results of Numeric simulation – Randomized spatial-point distribution data
+* other files are the results of application SDM to BCI dataset.
 
 ###  Code Availability
 #### Software
