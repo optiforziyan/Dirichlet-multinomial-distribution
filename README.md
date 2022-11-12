@@ -5,26 +5,26 @@
 ###  **Folders**
 #### functions
 1. Dirichlet-Multinomial distribution-S1.R
-* rdirichlet   - random variate generation
-* rdirichlet1  - random variate generation (avoid NAs)
-* dDir         - probability density (not mass!) function of Dirichlet distribution
-* dMDir        - probability mass (or density) function of the multinomial-Dirichlet distribution
-* dNBD         - probability mass function for independent negative binomial model 
-* dNMD         - probability mass function for negative multinomial model
-1.7 rMDir        - simulation of multinomial-Dirichlet distribution
-1.8 rMDir1       - simulation of multinomial-Dirichlet distribution by avoiding NAs
-1.9 rand         - random matrices generation
-1.10 likelihood  - calculation of the negative log-likelihood function for the Dirichlet-Multinomial model
-1.11 likelihood0 - calculation of the negative log-likelihood function for the null model: multinomial model
-1.12 fit         - fitting of the SDM model
-1.13 fitNBD      - fitting of the independent NBD model
-1.14 fitNMD      - fitting of the NMD model
-1.15 fitMD       - fitting of the ordinary multinomial model
+* rdirichlet()   - random variate generation
+* rdirichlet1()  - random variate generation (avoid NAs)
+* dDir()         - probability density (not mass!) function of Dirichlet distribution
+* dMDir()        - probability mass (or density) function of the multinomial-Dirichlet distribution
+* dNBD()         - probability mass function for independent negative binomial model 
+* dNMD()         - probability mass function for negative multinomial model
+* rMDir()        - simulation of multinomial-Dirichlet distribution
+* rMDir1()       - simulation of multinomial-Dirichlet distribution by avoiding NAs
+* rand()         - random matrices generation
+* likelihood()   - calculation of the negative log-likelihood function for the Dirichlet-Multinomial model
+* likelihood0()  - calculation of the negative log-likelihood function for the null model: multinomial model
+* fit()          - fitting of the SDM model
+* fitNBD()       - fitting of the independent NBD model
+* fitNMD()       - fitting of the NMD model
+* fitMD()        - fitting of the ordinary multinomial model
 2. Spatial distribution Index.R
-(1) CECI()       - Clark and Evans Competition Index
-(2) DC()         - Deviation Coefficient or Diffusion Coefficient 
-(3) species.distribution() - Simulation of species distribution using Poisson cluster process
-(4) r2.test      - calculate r2, RMSE, NRMSD based on actual values and predicted values
+* CECI()         - Clark and Evans Competition Index
+* DC()           - Deviation Coefficient or Diffusion Coefficient 
+* species.distribution() - Simulation of species distribution using Poisson cluster process
+* r2.test()      - calculate r2, RMSE, NRMSD based on actual values and predicted values
 
 
 ###  Code Availability
