@@ -19,6 +19,7 @@ Best fitted SAR models (Kissling & Carl, 2008) predicting Sørensen-based multi-
 8. ggpmisc version 0.3.5
 9. dgof version 1.2
 10. vioplot version 0.3.7
+11. doParallel version 1.0.15
 ## Citation
 
 The American Naturalist (In Review)
