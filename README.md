@@ -2,6 +2,8 @@
 
 ## Simulation
 
+Here, we provide a self-explained R code (AMNAT-SDM-Simulations.R) for repoduce all the results presented in our manuscript. 
+
 ###  **Folders**
 #### *functions* - Custom R Script
 1. Dirichlet-Multinomial distribution-S1.R
