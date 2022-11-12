@@ -802,7 +802,7 @@ BCI_SDI <- function(scale = c(20,20), census = 1, recruitment = T, BCI_data)
     }#if
   }#j
   
-  SDI <- SR <- abandence <-  NULL
+  SDI <- SR <- abundance <-  NULL
   
   dc = seq(100, 3500, 100)
   for(xx in 1:dim(xyint)[1])
@@ -818,11 +818,11 @@ BCI_SDI <- function(scale = c(20,20), census = 1, recruitment = T, BCI_data)
       Ni = c(Ni,length(D_all)*(10000/(scale[1]*scale[2])))
     }
     SR = c(SR, length(unique(bci_sel$sp)))
-    abandence = c(abandence, length(bci_sel$sp))
+    abundance = c(abundance, length(bci_sel$sp))
     SDI = c(SDI, sum(Ni*(Di/25)^1.6, na.rm = T))
     
    }
-  return(list("SDI" = SDI, "SR" = SR, "abandence" = abandence))
+  return(list("SDI" = SDI, "SR" = SR, "abundance" = abundance))
 }
 
 # test
@@ -914,12 +914,12 @@ BCI_SDM <- function(scale = c(20,20), recruitment = T, family = "Asteraceae", ce
   
   row.names(mat) = sps
   
-  quardat_SR <- quardat_abandence <-  NULL
+  quardat_SR <- quardat_abundance <-  NULL
   for(xx in 1:dim(mat)[2])
   {
     mat_sel <- mat[which(mat[, xx] > 0), xx]
     quardat_SR = c(quardat_SR,  length(mat_sel))
-    quardat_abandence = c(quardat_abandence,  sum(mat_sel))
+    quardat_abundance = c(quardat_abundance,  sum(mat_sel))
   }
   
   res=fit(mat)
@@ -930,11 +930,11 @@ BCI_SDM <- function(scale = c(20,20), recruitment = T, family = "Asteraceae", ce
   
   return(list("family" = family, "total species" = sps, "total SR" = length(sps), 
               "quardat SR" = quardat_SR,
-              "quardat Abandence" = quardat_abandence,
+              "quardat Abundance" = quardat_abundance,
               "SDM_alpha" = round(res$par,3),
               "DC" = dc_mean, 
               "AI" =  AI,
-              "Abandence_table" = mat))
+              "Abundance_table" = mat))
 }
 
 BCI_SDM_simple <- function(scale = c(20,20), recruitment = T, family = "Asteraceae", census = 1, BCI_data, BCI_spp)
@@ -1016,12 +1016,12 @@ BCI_SDM_simple <- function(scale = c(20,20), recruitment = T, family = "Asterace
   
   row.names(mat) = sps
   
-  quardat_SR <- quardat_abandence <-  NULL
+  quardat_SR <- quardat_abundance <-  NULL
   for(xx in 1:dim(mat)[2])
   {
     mat_sel <- mat[which(mat[, xx] > 0), xx]
     quardat_SR = c(quardat_SR,  length(mat_sel))
-    quardat_abandence = c(quardat_abandence,  sum(mat_sel))
+    quardat_abundance = c(quardat_abundance,  sum(mat_sel))
   }
   
   res=fit(mat)
@@ -1032,10 +1032,10 @@ BCI_SDM_simple <- function(scale = c(20,20), recruitment = T, family = "Asterace
   
   return(list("family" = family, "total species" = sps, "total SR" = length(sps), 
               "quardat SR" = quardat_SR,
-              "quardat Abandence" = quardat_abandence,
+              "quardat Abundance" = quardat_abundance,
               "SDM_alpha" = round(res$par,3),
               "DC" = dc_mean, 
-              "Abandence_table" = mat))
+              "Abundance_table" = mat))
 }
 
 # test
@@ -1046,18 +1046,18 @@ BCI_SDM_simple(scale = c(20,20), recruitment = T, family = "Asteraceae", census 
 # therefore, We have embedded parallel operations in the CECI function
 # these simulation will take ca. 12 hours
 ALP <- data.frame()
-Abandence_matrix = NULL
+Abundance_matrix = NULL
 for (cen in 1:8) {
     alp <- BCI_SDM(scale = c(20,20), recruitment = T, family = "ALL", census = cen, BCI_data, BCI_spp)
     ALP <- rbind(ALP, data.frame("census" = cen, "SDM_alpha" = alp$SDM_alpha, "SR" = alp$`total SR`, "DC" =  alp$DC, "AI" = alp$AI))
-    Abandence_matrix <- cbind(Abandence_matrix, alp$`quardat Abandence`)
+    Abundance_matrix <- cbind(Abundance_matrix, alp$`quardat Abundance`)
     cat("Census",cen, "finished...","\n")
 }
  
-colnames(Abandence_matrix) <- 1:8
-saveRDS(Abandence_matrix,"./output/Abandence_matrix.rds")
+colnames(Abundance_matrix) <- 1:8
+saveRDS(Abundance_matrix,"./output/Abundance_matrix.rds")
 write.csv(ALP,"./output/ALP.csv")
-write.csv(Abandence_matrix,"./output/Abandence_matrix.csv")
+write.csv(Abundance_matrix,"./output/Abundance_matrix.csv")
 
 
 for (i in 1:8) {
@@ -1090,14 +1090,15 @@ for(fam in 60:length(BCI_species)){
 write.csv(ALP,"./output/all_family_alpha.csv")
 
 
-AM <- readRDS("./output/Abandence_matrix.rds")
-AM <- data.frame("Abandence" = c(AM[,1],AM[,2],AM[,3],AM[,4],AM[,5],AM[,6],AM[,7],AM[,8]),
+AM <- readRDS("./output/Abundance_matrix.rds")
+AM <- data.frame("Abundance" = c(AM[,1],AM[,2],AM[,3],AM[,4],AM[,5],AM[,6],AM[,7],AM[,8]),
                  "Census" = rep(c(1982,1985,1990,1995,2000,2005,2010,2015),each=1250))
 AM$Census <- as.factor(AM$Census)
 
 
-
-ggplot(AM, aes(x = `Abandence`, y = `Census`, fill = ..density..)) + 
+library(ggridges)
+library(RColorBrewer)
+ggplot(AM, aes(x = `Abundance`, y = `Census`, fill = ..density..)) + 
   geom_density_ridges_gradient(scale = 3, rel_min_height = 0.00, size = 0.3) + 
   scale_fill_gradientn(colours = colorRampPalette(rev(brewer.pal(8,'Spectral')))(32))+
   theme_bw()
