@@ -25,6 +25,10 @@
 * DC()           - Deviation Coefficient or Diffusion Coefficient 
 * species.distribution() - Simulation of species distribution using Poisson cluster process
 * r2.test()      - calculate r2, RMSE, NRMSD based on actual values and predicted values
+#### *input*
+* bci.spptable.rdata           - for more information, please visit: https://datadryad.org/stash/dataset/doi:10.15146/5xcp-0d46
+* bci.treen.rdata (n = 1 to 8) - for more information, please visit: https://datadryad.org/stash/dataset/doi:10.15146/5xcp-0d46
+#### *output*
 
 
 ###  Code Availability
