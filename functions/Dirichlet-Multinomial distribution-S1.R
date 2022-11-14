@@ -205,7 +205,7 @@ return(mat)
 
 ##################################################
 #random matrices generation
-#rowSum is kept without chnage!
+#rowSum is kept without change!
 #method="proportion" means the relative occurrence rate is kept without change
 #method="constant" means the relative occurrence rate is equal
 #method="random" means the relative occurrence rate is randomly drawn from a uniform distribution
