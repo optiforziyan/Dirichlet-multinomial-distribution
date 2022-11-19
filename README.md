@@ -58,4 +58,5 @@ The American Naturalist (In Review)
 ## Author(s)
 
 ## References: 
-
+Clark, P. J., and Evans, F. C. (1954). Distance to nearest neighbor as a measure of spatial relationships in populations. Ecology, 35, 445–453.
+Blackman, G. E. (1942). Statistical and ecological studies in the distribution of species in plant communities: I. dispersion as a factor in the study of changes in plant populations. Annals of Botany, 6, 351–370. 
