@@ -41,9 +41,9 @@ index_res_m <- data.frame()
 for(j in 1:length(a))
 {
   v=v1=v2=vc=va=v1a=v2a=vector()
-  for(i in 1:1000)
+  for(i in 1001:2000)
   {
-    set.seed(j*i)
+    set.seed(i + j^2)
     dat=rMDir1(20,rep(a[j],1,10),sample(100:10000,20))
     res=fitNBD(dat)
     res1=fit(dat) #fit the standard species-site matrix
@@ -73,8 +73,8 @@ for(j in 1:length(a))
   lik=rbind(lik,vc)
   #
   #windows()
-  boxplot(cbind("SDM (¦Á)" = v,"NBD (k)" = v1),
-          main = paste("Preset ¦Á = ",a[j],sep=""),
+  boxplot(cbind("SDM (Â¦Ã)" = v,"NBD (k)" = v1),
+          main = paste("Preset Â¦Ã = ",a[j],sep=""),
           xlab = "Fitted value",
           ylab = "Model",
           col = c("orange","grey"),
@@ -120,9 +120,9 @@ index_res <- data.frame()
 for(j in 1:length(k))
 {
   v=v1=v2=vc=va=v1a=v2a=vector()
-  for(i in 1:1000)
+  for(i in 1001:2000)
   {
-    set.seed(j*i)
+    set.seed(i + j^2)
     dat=rnbinom(200,size=k[j],mu=sample(100:10000,1))
     res=fitNBD(dat)
     res1=fit(dat)
@@ -151,7 +151,7 @@ for(j in 1:length(k))
   lik=rbind(lik,vc)
   #
   #windows()
-  boxplot(cbind("SDM (¦Á)" = v,"NBD (k)" = v1),
+  boxplot(cbind("SDM (Â¦Ã)" = v,"NBD (k)" = v1),
           main = paste("Preset k = ",k[j],sep=""),
           xlab = "Fitted value",
           ylab = "Model",
@@ -652,7 +652,7 @@ dat1 <- delta_bic_single
 # [-which(delta_bic_single < -50)] 
 
 # Histogram
-hist(dat1, probability =T, xlab ="¦¤BIC%", ylab = "Density", col = "grey",
+hist(dat1, probability =T, xlab ="Â¦Â¤BIC%", ylab = "Density", col = "grey",
      axes = FALSE, main = "Randomized spatial-point distribution data - Single species")
 
 # Axis
@@ -674,7 +674,7 @@ vioplot(dat1, horizontal = TRUE, yaxt = "n", axes = FALSE,
 dat2 <- delta_bic_multiple
 
 # Histogram
-hist(dat2, probability = TRUE, xlab ="¦¤BIC%", ylab = "Density", col = "grey",
+hist(dat2, probability = TRUE, xlab ="Â¦Â¤BIC%", ylab = "Density", col = "grey",
      axes = FALSE, main = "Randomized spatial-point distribution data - Multiple species")
 
 # Axis
@@ -690,7 +690,7 @@ delta_D_single <- res_single$SDM_ks_D - res_single$NBD_ks_D
 delta_D_multiple <- res_multi$SDM_ks_D - res_multi$NBD_ks_D
 
 # Histogram
-hist(delta_D_single, probability =T, xlab ="¦¤D-statistic", ylab = "Density", col = "grey",
+hist(delta_D_single, probability =T, xlab ="Â¦Â¤D-statistic", ylab = "Density", col = "grey",
      axes = FALSE, main = "Randomized spatial-point distribution data - Single species")
 
 # Axis
@@ -705,7 +705,7 @@ vioplot(delta_D_single, horizontal = TRUE, yaxt = "n", axes = FALSE,
 
 
 # Histogram
-hist(delta_D_multiple, probability = TRUE, xlab ="¦¤D-statistic", ylab = "Density", col = "grey",
+hist(delta_D_multiple, probability = TRUE, xlab ="Â¦Â¤D-statistic", ylab = "Density", col = "grey",
      axes = FALSE, main = "Randomized spatial-point distribution data - Multiple species")
 
 # Axis
