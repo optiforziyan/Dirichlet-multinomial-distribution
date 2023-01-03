@@ -52,7 +52,6 @@ Here, we provide a self-explained R code (AMNAT-SDM-Simulations.R) for repoduce 
 11. doParallel version 1.0.15
 ## Citation
 
-The American Naturalist (In Review)
 
 
 ## Author(s)
